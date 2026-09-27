@@ -6,6 +6,7 @@ import { Plus, X } from "lucide-react"
 import { Sidebar } from "@/components/admin/Sidebar"
 import { ProjectForm, type FormData } from "@/components/admin/ProjectForm"
 import { ProjectGrid } from "@/components/ProjectGrid"
+import { ProjectSkeleton } from "@/components/ProjectSkeleton"
 import type { Project } from "@/components/ProjectCard"
 
 const emptyForm: FormData = { name: "", description: "", liveUrl: "" }
@@ -165,9 +166,7 @@ export default function AdminPage() {
         )}
 
         <div>
-          {loading && (
-            <p className="font-mono text-xs uppercase tracking-widest text-muted py-8">Loading...</p>
-          )}
+          {loading && <ProjectSkeleton count={3} />}
           {!loading && (
             <ProjectGrid
               projects={projects}
