@@ -37,10 +37,10 @@ export const NAV_LINKS: LinkItem[] = [
   },
   {
     num: "05",
-    title: "Blog",
-    sub: "Notes / Ideas",
-    href: "https://sreegopal.vercel.app",
-    external: true,
+    title: "Projects",
+    sub: "Work / Experiments",
+    href: "/projects",
+    external: false,
   },
   {
     num: "06",
