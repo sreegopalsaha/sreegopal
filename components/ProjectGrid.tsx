@@ -8,14 +8,10 @@ interface ProjectGridProps {
   onDelete?: (id: string) => void;
 }
 
-export function ProjectGrid({
-  projects,
-  onEdit,
-  onDelete,
-}: ProjectGridProps) {
+export function ProjectGrid({ projects, onEdit, onDelete }: ProjectGridProps) {
   if (projects.length === 0) {
     return (
-      <p className="font-mono text-xs uppercase tracking-widest text-muted py-12">
+      <p className="py-12 font-mono text-xs uppercase tracking-widest text-muted">
         No projects found.
       </p>
     );

@@ -28,17 +28,21 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <main className="max-w-6xl mx-auto px-6 pt-8 pb-16">
-      <nav className="flex items-center gap-1.5 font-mono text-[0.625rem] uppercase tracking-widest text-muted mb-10">
+    <main className="mx-auto w-full max-w-7xl px-6 pt-8 pb-16 lg:px-8">
+
+      <nav className="mb-14 flex items-center gap-1.5 font-mono text-[0.625rem] uppercase tracking-widest text-muted">
         <ArrowLeft className="size-3" />
+
         <Link href="/" className="hover:text-foreground transition-none">
           Home
         </Link>
+
         <span>/</span>
+
         <span className="text-foreground">Projects</span>
       </nav>
 
-      <div className="mb-14">
+      <header className="mb-14">
         <h1 className="font-mono text-[clamp(3.5rem,6vw,5.5rem)] font-normal leading-none tracking-[-0.06em] text-foreground">
           Things I’ve built.
         </h1>
@@ -47,8 +51,7 @@ export default function ProjectsPage() {
           A collection of projects I’ve built, experimented with, and worked on
           along the way.
         </p>
-      </div>
-
+      </header>
       {loading ? (
         <ProjectSkeleton count={6} />
       ) : (

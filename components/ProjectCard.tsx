@@ -1,10 +1,11 @@
-import { ArrowUpRight, Pencil, Trash2 } from "lucide-react";
+import { ArrowUpRight, GitCommit, Pencil, Trash2 } from "lucide-react";
 
 export interface Project {
   _id: string;
   name: string;
   description: string;
   liveUrl: string;
+  githubUrl: string;
 }
 
 interface ProjectCardProps {
@@ -30,8 +31,8 @@ export function ProjectCard({
   const isAdmin = onEdit && onDelete;
 
   return (
-    <div className="min-h-[11rem] border-b border-r border-line p-6">
-      <div className="flex h-full gap-5">
+    <div className="border-b border-r border-line p-6">
+      <div className="flex gap-5">
         <span className="shrink-0 font-mono text-[0.7rem] text-muted">
           {num}
         </span>
@@ -70,7 +71,7 @@ export function ProjectCard({
           </div>
 
           {!isAdmin && (
-            <div className="mt-auto flex gap-2 pt-6">
+            <div className="mt-5 flex gap-2">
               <a
                 href={project.liveUrl}
                 target="_blank"
@@ -80,18 +81,39 @@ export function ProjectCard({
                 Live Preview
                 <ArrowUpRight className="size-3.5" />
               </a>
+
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={actionBtn}
+              >
+                Visit GitHub
+                <GitCommit className="size-3.5" />
+              </a>
             </div>
           )}
 
           {isAdmin && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-auto truncate pt-6 font-mono text-[0.65rem] uppercase tracking-widest text-muted hover:text-foreground"
-            >
-              {project.liveUrl}
-            </a>
+            <div className="mt-5 flex flex-col gap-1">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="truncate font-mono text-[0.65rem] uppercase tracking-widest text-muted hover:text-foreground"
+              >
+                {project.liveUrl}
+              </a>
+
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="truncate font-mono text-[0.65rem] uppercase tracking-widest text-muted hover:text-foreground"
+              >
+                {project.githubUrl}
+              </a>
+            </div>
           )}
         </div>
       </div>
