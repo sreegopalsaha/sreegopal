@@ -22,8 +22,28 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Sree Gopal Saha",
-  description: "Link-in-bio page of Sree Gopal Saha",
+  title: "Sree Gopal Saha | Developer, Builder & Mentor",
+  description: "Sree Gopal Saha builds purposeful things on the internet. Explore links to GitHub, LinkedIn, portfolio, and more.",
+  keywords: ["Sree Gopal Saha", "Developer", "Builder", "Mentor", "Software Engineer", "Web Development"],
+  authors: [{ name: "Sree Gopal Saha" }],
+  openGraph: {
+    title: "Sree Gopal Saha | Developer, Builder & Mentor",
+    description: "Sree Gopal Saha builds purposeful things on the internet.",
+    url: "https://sreegopal.vercel.app",
+    siteName: "Sree Gopal Saha",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sree Gopal Saha | Developer, Builder & Mentor",
+    description: "Sree Gopal Saha builds purposeful things on the internet.",
+    creator: "@sreegopalsaha",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
